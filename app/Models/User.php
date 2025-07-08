@@ -45,5 +45,9 @@ class User extends Authenticatable
 {
     return $this->hasMany(Salary::class);
 }
+public function complaints()
+{
+    return $this->hasMany(\App\Models\Complaint::class);
+}
 
 }
