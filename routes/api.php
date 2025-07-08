@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\FeedbackController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +21,8 @@ use App\Http\Controllers\ComplaintController;
 
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::put('/users/{id}', [AuthController::class, 'update']);
 Route::get('/salaries/{id}', [SalaryController::class, 'getByUserId']);
-
-
+Route::post('/feedback', [FeedbackController::class, 'store']);
 Route::post('/complaints', [ComplaintController::class, 'store']);
 
